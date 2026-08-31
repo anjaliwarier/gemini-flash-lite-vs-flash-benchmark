@@ -1,0 +1,42 @@
+UNITED STATES SECURITIES AND EXCHANGE COMMISSION
+WASHINGTON, D.C. 20549
+FORM 10-K
+
+PART II - ITEM 8. FINANCIAL STATEMENTS AND SUPPLEMENTARY DATA
+CONSOLIDATED STATEMENTS OF OPERATIONS
+(In millions, except number of shares which are reflected in thousands and per share amounts)
+
+Years Ended September 30,                     2025        2024        2023
+-------------------------------------------------------------------------
+Net sales:
+  Products                                   $298,085    $272,850    $298,085
+  Services (1)                               $ 96,169    $ 85,200    $ 78,129
+Total net sales                              $394,254    $358,050    $376,214
+
+Cost of sales:
+  Products                                   $182,450    $168,400    $184,800
+  Services                                   $ 26,450    $ 24,100    $ 22,500
+Total cost of sales                          $208,900    $192,500    $207,300
+Gross margin                                 $185,354    $165,550    $168,914
+
+Operating expenses:
+  Research and development                   $ 31,370    $ 29,915    $ 26,251
+  Selling, general and administrative        $ 26,012    $ 24,932    $ 25,094
+Total operating expenses                     $ 57,382    $ 54,847    $ 51,345
+Operating income                             $127,972    $110,703    $117,569
+
+Other income/(expense), net (2)              $    342    $   (565)   $   (380)
+Income before provision for income taxes     $128,314    $110,138    $117,189
+Provision for income taxes                   $ 19,247    $ 16,521    $ 17,580
+Net income                                   $109,067    $ 93,617    $ 99,609
+
+Earnings per share:
+  Basic                                      $   7.15    $   6.08    $   6.16
+  Diluted                                    $   7.10    $   6.02    $   6.13
+
+Shares used in computing earnings per share:
+  Basic                                     15,250,000  15,400,000  16,160,000
+  Diluted                                   15,360,000  15,550,000  16,250,000
+
+(1) Includes subscription revenue, cloud storage, payment services, and digital advertising.
+(2) Includes interest expense of $3,850 million, interest income of $4,100 million, and foreign exchange net gain of $92 million in 2025.
