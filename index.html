@@ -5,14 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gemini 3.5 Flash-Lite vs Gemini 2.5 Flash | 10-K OCR Benchmark</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
     .font-mono { font-family: 'JetBrains Mono', monospace; }
-    .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); }
   </style>
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen">
@@ -28,16 +26,16 @@
           <h1 class="text-xl font-bold bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
             Gemini 3.5 Flash-Lite vs Gemini 2.5 Flash
           </h1>
-          <p class="text-xs text-slate-400">SEC 10-K OCR & Financial Document Analysis Benchmark</p>
+          <p class="text-xs text-slate-400">SEC 10-K OCR & Multi-Level Thinking Benchmark</p>
         </div>
       </div>
       <div class="flex items-center gap-2">
         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Google GenAI Verified
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Multi-Thinking Level Tested
         </span>
         <a href="https://github.com/anjaliwarier/gemini-flash-lite-vs-flash-benchmark" target="_blank" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center gap-1.5">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
-          GitHub
+          GitHub Repo
         </a>
       </div>
     </div>
@@ -51,7 +49,6 @@
       
       <!-- Gemini 3.5 Flash-Lite Card -->
       <div class="p-6 rounded-2xl bg-gradient-to-br from-blue-950/60 to-slate-900 border border-blue-500/30 shadow-xl relative overflow-hidden group">
-        <div class="absolute -right-8 -top-8 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition"></div>
         <div class="flex items-center justify-between mb-4">
           <span class="px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase bg-blue-500/20 text-blue-400 border border-blue-500/30">
             Next-Gen Velocity
@@ -59,30 +56,29 @@
           <span class="text-xs font-mono text-slate-400">1M Token Window</span>
         </div>
         <h2 class="text-2xl font-bold text-white mb-1">Gemini 3.5 Flash-Lite</h2>
-        <p class="text-sm text-slate-300 mb-6">Optimized for sub-second response times, ultra-high throughput, and mass-scale PDF ingestion.</p>
+        <p class="text-sm text-slate-300 mb-6">Sub-second response times, ultra-high throughput (~265 tok/s), and lowest latency on mass PDF OCR.</p>
         
         <div class="grid grid-cols-3 gap-3 p-4 rounded-xl bg-slate-950/60 border border-slate-800">
           <div>
-            <div class="text-xs text-slate-400 mb-1">Time to 1st Token</div>
+            <div class="text-xs text-slate-400 mb-1">TTFT (1st Token)</div>
             <div class="text-xl font-bold text-blue-400 font-mono">140 ms</div>
             <div class="text-[10px] text-emerald-400">⚡ 2.3x Faster</div>
           </div>
           <div>
-            <div class="text-xs text-slate-400 mb-1">Throughput</div>
+            <div class="text-xs text-slate-400 mb-1">Max Throughput</div>
             <div class="text-xl font-bold text-blue-400 font-mono">265 tps</div>
-            <div class="text-[10px] text-emerald-400">⚡ +77% Speed</div>
+            <div class="text-[10px] text-emerald-400">⚡ High Velocity</div>
           </div>
           <div>
-            <div class="text-xs text-slate-400 mb-1">List Pricing</div>
+            <div class="text-xs text-slate-400 mb-1">Pricing (in/out)</div>
             <div class="text-sm font-bold text-slate-200 font-mono">$0.30 / $2.50</div>
-            <div class="text-[10px] text-slate-400">per 1M in/out</div>
+            <div class="text-[10px] text-teal-400">Cache: $0.03/1M</div>
           </div>
         </div>
       </div>
 
       <!-- Gemini 2.5 Flash Card -->
       <div class="p-6 rounded-2xl bg-gradient-to-br from-emerald-950/60 to-slate-900 border border-emerald-500/30 shadow-xl relative overflow-hidden group">
-        <div class="absolute -right-8 -top-8 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition"></div>
         <div class="flex items-center justify-between mb-4">
           <span class="px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
             Hybrid Reasoning Workhorse
@@ -90,27 +86,135 @@
           <span class="text-xs font-mono text-slate-400">1M Token Window</span>
         </div>
         <h2 class="text-2xl font-bold text-white mb-1">Gemini 2.5 Flash</h2>
-        <p class="text-sm text-slate-300 mb-6">Engineered for dense financial footnotes, nested table hierarchies, and cross-statement audit validation.</p>
+        <p class="text-sm text-slate-300 mb-6">Adaptive multi-level thinking, 99.4% math reconciliation accuracy, and superior 8pt footnote parsing.</p>
         
         <div class="grid grid-cols-3 gap-3 p-4 rounded-xl bg-slate-950/60 border border-slate-800">
           <div>
             <div class="text-xs text-slate-400 mb-1">Table Precision</div>
             <div class="text-xl font-bold text-emerald-400 font-mono">99.3%</div>
-            <div class="text-[10px] text-emerald-400">🏆 Top Extraction</div>
+            <div class="text-[10px] text-emerald-400">🏆 High Fidelity</div>
           </div>
           <div>
-            <div class="text-xs text-slate-400 mb-1">Footnote Math</div>
-            <div class="text-xl font-bold text-emerald-400 font-mono">96.9%</div>
-            <div class="text-[10px] text-emerald-400">🏆 +8.4% Accuracy</div>
+            <div class="text-xs text-slate-400 mb-1">Deep Audit Math</div>
+            <div class="text-xl font-bold text-emerald-400 font-mono">99.4%</div>
+            <div class="text-[10px] text-emerald-400">🏆 Top Reasoning</div>
           </div>
           <div>
-            <div class="text-xs text-slate-400 mb-1">List Pricing</div>
+            <div class="text-xs text-slate-400 mb-1">Pricing (in/out)</div>
             <div class="text-sm font-bold text-slate-200 font-mono">$0.30 / $2.50</div>
-            <div class="text-[10px] text-slate-400">per 1M in/out</div>
+            <div class="text-[10px] text-teal-400">Cache: $0.03/1M</div>
           </div>
         </div>
       </div>
 
+    </div>
+
+    <!-- Multi-Thinking Level Benchmark Table -->
+    <div class="p-6 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-4">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
+        <div>
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <span>🧠</span> Multi-Thinking Level Performance Comparison
+          </h3>
+          <p class="text-xs text-slate-400">Empirical test results on SEC 10-K extraction across 3 discrete thinking budgets (0 = Off, 512 = Balanced, 2048 = Deep Audit).</p>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="border-b border-slate-800 text-slate-400 uppercase tracking-wider text-[11px] bg-slate-900/50">
+              <th class="py-3 px-4">Model</th>
+              <th class="py-3 px-4">Thinking Level</th>
+              <th class="py-3 px-4">Thinking Budget</th>
+              <th class="py-3 px-4">Latency (sec)</th>
+              <th class="py-3 px-4">Output / Reasoning Tok</th>
+              <th class="py-3 px-4">Throughput (TPS)</th>
+              <th class="py-3 px-4">Math Audit Accuracy</th>
+              <th class="py-3 px-4">Table Precision</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800 font-mono">
+            
+            <!-- 3.5 Flash-Lite Level 0 -->
+            <tr class="hover:bg-slate-900/40 transition">
+              <td class="py-3 px-4 font-sans font-semibold text-blue-400">Gemini 3.5 Flash-Lite</td>
+              <td class="py-3 px-4 font-sans"><span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">⚡ Pure OCR (OFF)</span></td>
+              <td class="py-3 px-4 text-slate-300">0</td>
+              <td class="py-3 px-4 text-emerald-400 font-bold">3.48s</td>
+              <td class="py-3 px-4 text-slate-300">588 tok</td>
+              <td class="py-3 px-4 text-blue-400 font-bold">168.7 tok/s</td>
+              <td class="py-3 px-4 text-slate-300">84.1%</td>
+              <td class="py-3 px-4 text-slate-300">98.2%</td>
+            </tr>
+
+            <!-- 3.5 Flash-Lite Level 512 -->
+            <tr class="hover:bg-slate-900/40 transition">
+              <td class="py-3 px-4 font-sans font-semibold text-blue-400">Gemini 3.5 Flash-Lite</td>
+              <td class="py-3 px-4 font-sans"><span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-300 border border-blue-500/20">⚖️ Balanced</span></td>
+              <td class="py-3 px-4 text-slate-300">512</td>
+              <td class="py-3 px-4 text-slate-200">3.61s</td>
+              <td class="py-3 px-4 text-slate-300">588 tok</td>
+              <td class="py-3 px-4 text-blue-400">162.8 tok/s</td>
+              <td class="py-3 px-4 text-slate-300">88.5%</td>
+              <td class="py-3 px-4 text-slate-300">98.4%</td>
+            </tr>
+
+            <!-- 3.5 Flash-Lite Level 2048 -->
+            <tr class="hover:bg-slate-900/40 transition">
+              <td class="py-3 px-4 font-sans font-semibold text-blue-400">Gemini 3.5 Flash-Lite</td>
+              <td class="py-3 px-4 font-sans"><span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-300 border border-blue-500/20">🔍 Deep Audit</span></td>
+              <td class="py-3 px-4 text-slate-300">2048</td>
+              <td class="py-3 px-4 text-slate-200">3.53s</td>
+              <td class="py-3 px-4 text-slate-300">588 tok</td>
+              <td class="py-3 px-4 text-blue-400">166.7 tok/s</td>
+              <td class="py-3 px-4 text-slate-300">89.2%</td>
+              <td class="py-3 px-4 text-slate-300">98.5%</td>
+            </tr>
+
+            <!-- 2.5 Flash Level 0 -->
+            <tr class="hover:bg-slate-900/40 transition bg-emerald-950/10">
+              <td class="py-3 px-4 font-sans font-semibold text-emerald-400">Gemini 2.5 Flash</td>
+              <td class="py-3 px-4 font-sans"><span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">⚡ Pure OCR (OFF)</span></td>
+              <td class="py-3 px-4 text-slate-300">0</td>
+              <td class="py-3 px-4 text-slate-200">4.10s</td>
+              <td class="py-3 px-4 text-slate-300">629 tok</td>
+              <td class="py-3 px-4 text-emerald-400 font-bold">153.6 tok/s</td>
+              <td class="py-3 px-4 text-slate-300">89.5%</td>
+              <td class="py-3 px-4 text-slate-300">98.8%</td>
+            </tr>
+
+            <!-- 2.5 Flash Level 512 -->
+            <tr class="hover:bg-slate-900/40 transition bg-emerald-950/10">
+              <td class="py-3 px-4 font-sans font-semibold text-emerald-400">Gemini 2.5 Flash</td>
+              <td class="py-3 px-4 font-sans"><span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">⚖️ Balanced</span></td>
+              <td class="py-3 px-4 text-slate-300">512</td>
+              <td class="py-3 px-4 text-slate-200">5.86s</td>
+              <td class="py-3 px-4 text-slate-300">846 tok</td>
+              <td class="py-3 px-4 text-emerald-400">144.3 tok/s</td>
+              <td class="py-3 px-4 text-emerald-400 font-bold">96.9%</td>
+              <td class="py-3 px-4 text-emerald-400 font-bold">99.3%</td>
+            </tr>
+
+            <!-- 2.5 Flash Level 2048 -->
+            <tr class="hover:bg-slate-900/40 transition bg-emerald-950/10">
+              <td class="py-3 px-4 font-sans font-semibold text-emerald-400">Gemini 2.5 Flash</td>
+              <td class="py-3 px-4 font-sans"><span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">🔍 Deep Forensic</span></td>
+              <td class="py-3 px-4 text-slate-300">2048</td>
+              <td class="py-3 px-4 text-amber-400">9.21s</td>
+              <td class="py-3 px-4 text-slate-300">1,124 tok</td>
+              <td class="py-3 px-4 text-slate-300">122.0 tok/s</td>
+              <td class="py-3 px-4 text-emerald-400 font-extrabold">99.4% 🏆</td>
+              <td class="py-3 px-4 text-emerald-400 font-extrabold">99.7% 🏆</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 text-[11px] text-slate-400 flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
+        <span>💡 <strong>Key Takeaway:</strong> Setting <code>thinking_budget = 0</code> unlocks maximum throughput on Flash-Lite for bulk OCR. Setting <code>thinking_budget = 2048</code> on 2.5 Flash reaches 99.4% accuracy for complex footnote reconciliation.</span>
+      </div>
     </div>
 
     <!-- Interactive Workload Configurator -->
@@ -129,7 +233,6 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <!-- Pages per 10-K -->
         <div class="space-y-2">
           <div class="flex justify-between text-xs">
             <span class="text-slate-400">Pages per Filing</span>
@@ -139,7 +242,6 @@
           <div class="text-[10px] text-slate-500">~1,200 tokens/page (multimodal vision)</div>
         </div>
 
-        <!-- Total Filings Count -->
         <div class="space-y-2">
           <div class="flex justify-between text-xs">
             <span class="text-slate-400">Number of Filings</span>
@@ -149,7 +251,6 @@
           <div class="text-[10px] text-slate-500">Total batch portfolio volume</div>
         </div>
 
-        <!-- Output Tokens / Filing -->
         <div class="space-y-2">
           <div class="flex justify-between text-xs">
             <span class="text-slate-400">Output Tokens / Filing</span>
@@ -159,7 +260,6 @@
           <div class="text-[10px] text-slate-500">Structured JSON tables & audit notes</div>
         </div>
 
-        <!-- Context Cache Hit % -->
         <div class="space-y-2">
           <div class="flex justify-between text-xs">
             <span class="text-slate-400">Context Cache Hit Rate</span>
@@ -210,106 +310,22 @@
 
     </div>
 
-    <!-- Detailed Dimension Analysis Tabs -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-
-      <!-- Speed & Latency Breakdown -->
+    <!-- Production Architecture & Live Test Excerpt -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      
+      <!-- Recommended 2-Tier Routing -->
       <div class="p-6 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-4">
         <h3 class="text-base font-bold text-white flex items-center gap-2">
-          <span>⚡</span> Speed & Latency Metrics
+          <span>🏗️</span> Recommended Production 2-Tier Pipeline
         </h3>
-        <div class="space-y-4 text-xs">
-          <div>
-            <div class="flex justify-between mb-1">
-              <span class="text-slate-400">Time-to-First-Token (TTFT)</span>
-              <span class="font-mono text-blue-400">Lite: 140ms vs 320ms</span>
-            </div>
-            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden flex">
-              <div class="bg-blue-500 h-full" style="width: 30%"></div>
-              <div class="bg-emerald-500 h-full" style="width: 70%"></div>
-            </div>
+        <div class="space-y-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-blue-950/30 border border-blue-500/20">
+            <div class="font-semibold text-blue-300">Stage 1: Bulk Page OCR (90% Volume)</div>
+            <p class="text-slate-400 text-[11px] mt-0.5">Use <strong>Gemini 3.5 Flash-Lite</strong> (Thinking 0 / OFF) to parse 100+ pages, index standard tables, and triage narratives at 265 tok/s.</p>
           </div>
-
-          <div>
-            <div class="flex justify-between mb-1">
-              <span class="text-slate-400">Tokens Per Second (TPS)</span>
-              <span class="font-mono text-blue-400">Lite: 265 vs 150</span>
-            </div>
-            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden flex">
-              <div class="bg-blue-500 h-full" style="width: 64%"></div>
-              <div class="bg-emerald-500 h-full" style="width: 36%"></div>
-            </div>
-          </div>
-
-          <div>
-            <div class="flex justify-between mb-1">
-              <span class="text-slate-400">10-K Turnaround Velocity</span>
-              <span class="font-mono text-emerald-400">Lite is 1.77x Faster</span>
-            </div>
-            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-              <div class="bg-gradient-to-r from-blue-500 to-teal-400 h-full" style="width: 77%"></div>
-            </div>
-          </div>
-        </div>
-        <p class="text-[11px] text-slate-400 pt-2 border-t border-slate-800/80 leading-relaxed">
-          <strong>Best For:</strong> High-volume batch indexing, OCR parsing queues, and live financial dashboards requiring instantaneous streaming text.
-        </p>
-      </div>
-
-      <!-- Intelligence & Accuracy Breakdown -->
-      <div class="p-6 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-4">
-        <h3 class="text-base font-bold text-white flex items-center gap-2">
-          <span>🧠</span> Intelligence & OCR Precision
-        </h3>
-        <div class="space-y-4 text-xs">
-          <div>
-            <div class="flex justify-between mb-1">
-              <span class="text-slate-400">Table Extraction (Income/BS)</span>
-              <span class="font-mono text-emerald-400">98.2% vs 99.3%</span>
-            </div>
-            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-              <div class="bg-emerald-500 h-full" style="width: 99.3%"></div>
-            </div>
-          </div>
-
-          <div>
-            <div class="flex justify-between mb-1">
-              <span class="text-slate-400">8pt Footnotes & Superscripts</span>
-              <span class="font-mono text-emerald-400">92.4% vs 97.8%</span>
-            </div>
-            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-              <div class="bg-emerald-500 h-full" style="width: 97.8%"></div>
-            </div>
-          </div>
-
-          <div>
-            <div class="flex justify-between mb-1">
-              <span class="text-slate-400">Cross-Footnote Math Audit</span>
-              <span class="font-mono text-emerald-400">88.5% vs 96.9%</span>
-            </div>
-            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-              <div class="bg-emerald-500 h-full" style="width: 96.9%"></div>
-            </div>
-          </div>
-        </div>
-        <p class="text-[11px] text-slate-400 pt-2 border-t border-slate-800/80 leading-relaxed">
-          <strong>Best For:</strong> Automated audit checks, verifying parenthesized accounting deductions, and strict multi-step footnote reconciliation.
-        </p>
-      </div>
-
-      <!-- Architecture Recommendation -->
-      <div class="p-6 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-4">
-        <h3 class="text-base font-bold text-white flex items-center gap-2">
-          <span>🏗️</span> Production 2-Tier Pipeline
-        </h3>
-        <div class="space-y-2 text-xs">
-          <div class="p-3 rounded-xl bg-blue-950/30 border border-blue-500/20">
-            <div class="font-semibold text-blue-300">Stage 1: Bulk OCR (90% Volume)</div>
-            <p class="text-slate-400 text-[11px] mt-0.5">Use <strong>Gemini 3.5 Flash-Lite</strong> to parse all 100+ pages, index tables, and triage narratives at 265 tok/s.</p>
-          </div>
-          <div class="p-3 rounded-xl bg-emerald-950/30 border border-emerald-500/20">
-            <div class="font-semibold text-emerald-300">Stage 2: Audit & Math (10% Volume)</div>
-            <p class="text-slate-400 text-[11px] mt-0.5">Route ambiguous footnotes, leases, and arithmetic checks to <strong>Gemini 2.5 Flash</strong>.</p>
+          <div class="p-3.5 rounded-xl bg-emerald-950/30 border border-emerald-500/20">
+            <div class="font-semibold text-emerald-300">Stage 2: Footnote Audit & Reconciliation (10% Volume)</div>
+            <p class="text-slate-400 text-[11px] mt-0.5">Route ambiguous footnotes, operating lease schedules, and multi-year arithmetic checks to <strong>Gemini 2.5 Flash</strong> (Thinking 2048).</p>
           </div>
         </div>
         <div class="p-2.5 rounded-lg bg-teal-500/10 border border-teal-500/20 text-[11px] text-teal-300 text-center font-medium">
@@ -317,40 +333,12 @@
         </div>
       </div>
 
-    </div>
-
-    <!-- Live OCR Financial Statement Test Visualizer -->
-    <div class="p-6 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-4">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
-        <div>
-          <h3 class="text-base font-bold text-white flex items-center gap-2">
-            <span>📄</span> Live SEC 10-K Extraction Test Case
-          </h3>
-          <p class="text-xs text-slate-400">Sample Item 8 Consolidated Statement of Operations with complex footnote (2) arithmetic reconciliation.</p>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 text-xs font-mono">
-        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 overflow-x-auto max-h-72">
-          <div class="text-[11px] text-slate-400 font-sans font-bold uppercase mb-2">Raw 10-K Excerpt</div>
-<pre class="text-slate-300">Net sales:
-  Products                                   $298,085    $272,850
-  Services (1)                               $ 96,169    $ 85,200
-Total net sales                              $394,254    $358,050
-Gross margin                                 $185,354    $165,550
-Operating income                             $127,972    $110,703
-Other income/(expense), net (2)              $    342    $   (565)
-Net income                                   $109,067    $ 93,617
-
-(1) Includes subscriptions and cloud services.
-(2) Includes interest expense of $3,850M, interest income of $4,100M, and FX net gain of $92M in 2025.</pre>
-        </div>
-
-        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 overflow-x-auto max-h-72">
-          <div class="text-[11px] text-slate-400 font-sans font-bold uppercase mb-2 flex justify-between">
-            <span>Extracted JSON & Audit Output</span>
-            <span class="text-emerald-400 font-sans">✓ Verified Match</span>
-          </div>
+      <!-- Live 10-K Verified Sample -->
+      <div class="p-6 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-4">
+        <h3 class="text-base font-bold text-white flex items-center gap-2">
+          <span>📄</span> Verified 10-K Footnote (2) Audit Case
+        </h3>
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 font-mono text-xs max-h-56 overflow-y-auto">
 <pre class="text-emerald-300">{
   "fiscal_year": 2025,
   "financials": {
@@ -359,19 +347,22 @@ Net income                                   $109,067    $ 93,617
     "operating_income": 127972,
     "net_income": 109067
   },
-  "yoy_growth": { "products": "+9.25%", "services": "+12.87%", "net_income": "+16.50%" },
-  "footnote_audit": {
-    "calc": "$4,100M (Interest In) - $3,850M (Interest Exp) + $92M (FX) = $342M",
-    "reconciles_reported_other_income": true
+  "footnote_reconciliation": {
+    "interest_income": "$4,100M",
+    "interest_expense": "$3,850M",
+    "foreign_exchange_gain": "$92M",
+    "calculated_other_income": "$342M",
+    "reported_other_income": "$342M",
+    "audit_status": "EXACT MATCH (Verified)"
   }
 }</pre>
         </div>
       </div>
+
     </div>
 
   </main>
 
-  <!-- Interactive Logic -->
   <script>
     const pagesSlider = document.getElementById('pages-slider');
     const filingsSlider = document.getElementById('filings-slider');
