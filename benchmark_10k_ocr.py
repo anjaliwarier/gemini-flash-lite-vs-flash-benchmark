@@ -21,24 +21,26 @@ Perform the following extraction and audit tasks on the SEC 10-K filing excerpt:
 4. Identify any negative figures or footnote caveats.
 """
 
-THINKING_LEVELS_BENCHMARK = {
-    "gemini-3.5-flash-lite": {
-        "display_name": "Gemini 3.5 Flash-Lite",
-        "levels": {
-            0: {"label": "Thinking OFF (0)", "latency_sec": 3.48, "out_tokens": 588, "tps": 168.7, "table_acc": 98.2, "math_acc": 84.1, "footnote_acc": 92.4},
-            512: {"label": "Balanced (512)", "latency_sec": 3.61, "out_tokens": 588, "tps": 162.8, "table_acc": 98.4, "math_acc": 88.5, "footnote_acc": 93.1},
-            2048: {"label": "Deep Audit (2048)", "latency_sec": 3.53, "out_tokens": 588, "tps": 166.7, "table_acc": 98.5, "math_acc": 89.2, "footnote_acc": 93.5}
-        }
+THINKING_LEVELS_BENCHMARK = [
+    {
+        "level": "Level 0 (Budget: 0 / OFF)",
+        "lite": {"name": "Gemini 3.5 Flash-Lite", "latency": 3.48, "out_tok": 588, "tps": 168.7, "math_acc": 84.1, "table_acc": 98.2},
+        "flash": {"name": "Gemini 2.5 Flash", "latency": 4.10, "out_tok": 629, "tps": 153.6, "math_acc": 89.5, "table_acc": 98.8},
+        "advantage": "🏆 Gemini 3.5 Flash-Lite: 18% faster latency (3.48s vs 4.10s) & +10% throughput"
     },
-    "gemini-2.5-flash": {
-        "display_name": "Gemini 2.5 Flash",
-        "levels": {
-            0: {"label": "Thinking OFF (0)", "latency_sec": 4.10, "out_tokens": 629, "tps": 153.6, "table_acc": 98.8, "math_acc": 89.5, "footnote_acc": 95.2},
-            512: {"label": "Balanced (512)", "latency_sec": 5.86, "out_tokens": 846, "tps": 144.3, "table_acc": 99.3, "math_acc": 96.9, "footnote_acc": 97.8},
-            2048: {"label": "Deep Audit (2048)", "latency_sec": 9.21, "out_tokens": 1124, "tps": 122.0, "table_acc": 99.7, "math_acc": 99.4, "footnote_acc": 98.9}
-        }
+    {
+        "level": "Level 1 (Budget: 512)",
+        "lite": {"name": "Gemini 3.5 Flash-Lite", "latency": 3.61, "out_tok": 588, "tps": 162.8, "math_acc": 88.5, "table_acc": 98.4},
+        "flash": {"name": "Gemini 2.5 Flash", "latency": 5.86, "out_tok": 846, "tps": 144.3, "math_acc": 96.9, "table_acc": 99.3},
+        "advantage": "🏆 Gemini 2.5 Flash: +8.4% math accuracy | ⚡ Flash-Lite: 1.6x faster turnaround"
+    },
+    {
+        "level": "Level 2 (Budget: 2048)",
+        "lite": {"name": "Gemini 3.5 Flash-Lite", "latency": 3.53, "out_tok": 588, "tps": 166.7, "math_acc": 89.2, "table_acc": 98.5},
+        "flash": {"name": "Gemini 2.5 Flash", "latency": 9.21, "out_tok": 1124, "tps": 122.0, "math_acc": 99.4, "table_acc": 99.7},
+        "advantage": "🏆 Gemini 2.5 Flash: +10.2% math accuracy (99.4% vs 89.2%) & 99.7% table fidelity"
     }
-}
+]
 
 def load_sample_document():
     sample_file = os.path.join(os.path.dirname(__file__), "sec_10k_sample.txt")
@@ -69,16 +71,19 @@ def calculate_workload_cost(pages=100, filings=1000, avg_out_tokens=8500, cache_
     }
 
 def print_thinking_level_table():
-    print("=========================================================================================================")
-    print("  THINKING LEVELS COMPARISON MATRIX (SEC 10-K OCR & FINANCIAL RECONCILIATION)")
-    print("=========================================================================================================")
-    print(f"{'Model':<24} | {'Thinking Level':<18} | {'Latency':<8} | {'Output Tok':<10} | {'TPS':<8} | {'Math Audit Acc':<14} | {'Table Acc':<9}")
-    print("-" * 105)
-    for model_key, data in THINKING_LEVELS_BENCHMARK.items():
-        name = data["display_name"]
-        for level_budget, stats in data["levels"].items():
-            print(f"{name:<24} | {stats['label']:<18} | {stats['latency_sec']:<6.2f}s | {stats['out_tokens']:<10} | {stats['tps']:<8.1f} | {stats['math_acc']:<13.1f}% | {stats['table_acc']:<8.1f}%")
-        print("-" * 105)
+    print("=" * 135)
+    print("  MULTI-THINKING LEVEL BENCHMARK MATRIX & DIRECT ADVANTAGE (SEC 10-K OCR & RECONCILIATION)")
+    print("=" * 135)
+    print(f"{'Thinking Level':<24} | {'Model':<22} | {'Latency':<7} | {'TPS':<8} | {'Math Acc':<9} | {'Table Acc':<9} | {'🏆 Direct Advantage & Verdict':<40}")
+    print("-" * 135)
+    for row in THINKING_LEVELS_BENCHMARK:
+        lvl = row["level"]
+        lite = row["lite"]
+        flash = row["flash"]
+        adv = row["advantage"]
+        print(f"{lvl:<24} | {lite['name']:<22} | {lite['latency']:<5.2f}s | {lite['tps']:<8.1f} | {lite['math_acc']:<8.1f}% | {lite['table_acc']:<8.1f}% | {adv:<40}")
+        print(f"{'':<24} | {flash['name']:<22} | {flash['latency']:<5.2f}s | {flash['tps']:<8.1f} | {flash['math_acc']:<8.1f}% | {flash['table_acc']:<8.1f}% |")
+        print("-" * 135)
 
 def run_live_test(thinking_budgets=[0, 512, 2048]):
     doc_text = load_sample_document()

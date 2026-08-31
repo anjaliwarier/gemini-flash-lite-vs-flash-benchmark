@@ -109,14 +109,14 @@
 
     </div>
 
-    <!-- Multi-Thinking Level Benchmark Table -->
+    <!-- Multi-Thinking Level Benchmark Table with Direct Advantage -->
     <div class="p-6 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-4">
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
         <div>
           <h3 class="text-lg font-bold text-white flex items-center gap-2">
-            <span>🧠</span> Multi-Thinking Level Performance Comparison
+            <span>🧠</span> Multi-Thinking Level Head-to-Head Comparison & Direct Advantage
           </h3>
-          <p class="text-xs text-slate-400">Empirical test results on SEC 10-K extraction across 3 discrete thinking budgets (0 = Off, 512 = Balanced, 2048 = Deep Audit).</p>
+          <p class="text-xs text-slate-400">Empirical test results on SEC 10-K extraction across 3 thinking budgets (0 = Off, 512 = Balanced, 2048 = Deep Audit).</p>
         </div>
       </div>
 
@@ -124,88 +124,82 @@
         <table class="w-full text-left text-xs border-collapse">
           <thead>
             <tr class="border-b border-slate-800 text-slate-400 uppercase tracking-wider text-[11px] bg-slate-900/50">
-              <th class="py-3 px-4">Model</th>
               <th class="py-3 px-4">Thinking Level</th>
-              <th class="py-3 px-4">Thinking Budget</th>
-              <th class="py-3 px-4">Latency (sec)</th>
-              <th class="py-3 px-4">Output / Reasoning Tok</th>
+              <th class="py-3 px-4">Model</th>
+              <th class="py-3 px-4">Latency</th>
               <th class="py-3 px-4">Throughput (TPS)</th>
-              <th class="py-3 px-4">Math Audit Accuracy</th>
+              <th class="py-3 px-4">Math Audit Acc</th>
               <th class="py-3 px-4">Table Precision</th>
+              <th class="py-3 px-4 font-bold text-teal-300">Direct Advantage & Verdict</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-800 font-mono">
             
-            <!-- 3.5 Flash-Lite Level 0 -->
+            <!-- LEVEL 0 (OFF) -->
             <tr class="hover:bg-slate-900/40 transition">
-              <td class="py-3 px-4 font-sans font-semibold text-blue-400">Gemini 3.5 Flash-Lite</td>
-              <td class="py-3 px-4 font-sans"><span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">⚡ Pure OCR (OFF)</span></td>
-              <td class="py-3 px-4 text-slate-300">0</td>
-              <td class="py-3 px-4 text-emerald-400 font-bold">3.48s</td>
-              <td class="py-3 px-4 text-slate-300">588 tok</td>
-              <td class="py-3 px-4 text-blue-400 font-bold">168.7 tok/s</td>
-              <td class="py-3 px-4 text-slate-300">84.1%</td>
-              <td class="py-3 px-4 text-slate-300">98.2%</td>
+              <td rowspan="2" class="py-3 px-4 font-sans font-bold text-slate-200 border-r border-slate-800/80 align-middle">
+                ⚡ Level 0<br><span class="text-[10px] font-normal text-slate-400">Budget: 0 (OFF)</span>
+              </td>
+              <td class="py-2.5 px-4 font-sans text-blue-400 font-semibold">Gemini 3.5 Flash-Lite</td>
+              <td class="py-2.5 px-4 text-emerald-400 font-bold">3.48s</td>
+              <td class="py-2.5 px-4 text-blue-400 font-bold">168.7 tok/s</td>
+              <td class="py-2.5 px-4 text-slate-300">84.1%</td>
+              <td class="py-2.5 px-4 text-slate-300">98.2%</td>
+              <td rowspan="2" class="py-3 px-4 font-sans text-xs text-blue-300 bg-blue-950/20 border-l border-slate-800/80 align-middle">
+                🏆 <strong class="text-white">Gemini 3.5 Flash-Lite</strong>: <span class="text-emerald-400 font-semibold">18% faster latency</span> (3.48s vs 4.10s) & <span class="text-blue-400 font-semibold">+10% higher throughput</span> for bulk OCR.
+              </td>
+            </tr>
+            <tr class="hover:bg-slate-900/40 transition bg-slate-950/40">
+              <td class="py-2.5 px-4 font-sans text-emerald-400 font-semibold">Gemini 2.5 Flash</td>
+              <td class="py-2.5 px-4 text-slate-200">4.10s</td>
+              <td class="py-2.5 px-4 text-slate-300">153.6 tok/s</td>
+              <td class="py-2.5 px-4 text-slate-300">89.5%</td>
+              <td class="py-2.5 px-4 text-slate-300">98.8%</td>
             </tr>
 
-            <!-- 3.5 Flash-Lite Level 512 -->
-            <tr class="hover:bg-slate-900/40 transition">
-              <td class="py-3 px-4 font-sans font-semibold text-blue-400">Gemini 3.5 Flash-Lite</td>
-              <td class="py-3 px-4 font-sans"><span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-300 border border-blue-500/20">⚖️ Balanced</span></td>
-              <td class="py-3 px-4 text-slate-300">512</td>
-              <td class="py-3 px-4 text-slate-200">3.61s</td>
-              <td class="py-3 px-4 text-slate-300">588 tok</td>
-              <td class="py-3 px-4 text-blue-400">162.8 tok/s</td>
-              <td class="py-3 px-4 text-slate-300">88.5%</td>
-              <td class="py-3 px-4 text-slate-300">98.4%</td>
+            <!-- LEVEL 512 (BALANCED) -->
+            <tr class="hover:bg-slate-900/40 transition border-t-2 border-slate-800">
+              <td rowspan="2" class="py-3 px-4 font-sans font-bold text-slate-200 border-r border-slate-800/80 align-middle">
+                ⚖️ Level 1<br><span class="text-[10px] font-normal text-slate-400">Budget: 512</span>
+              </td>
+              <td class="py-2.5 px-4 font-sans text-blue-400 font-semibold">Gemini 3.5 Flash-Lite</td>
+              <td class="py-2.5 px-4 text-emerald-400 font-bold">3.61s</td>
+              <td class="py-2.5 px-4 text-blue-400 font-bold">162.8 tok/s</td>
+              <td class="py-2.5 px-4 text-slate-300">88.5%</td>
+              <td class="py-2.5 px-4 text-slate-300">98.4%</td>
+              <td rowspan="2" class="py-3 px-4 font-sans text-xs text-emerald-300 bg-emerald-950/20 border-l border-slate-800/80 align-middle">
+                🏆 <strong class="text-white">Gemini 2.5 Flash</strong>: <span class="text-emerald-400 font-semibold">+8.4% higher math accuracy</span> (96.9% vs 88.5%).<br>
+                ⚡ <strong class="text-white">Flash-Lite</strong> is <span class="text-blue-400 font-semibold">1.6x faster</span> (3.61s vs 5.86s).
+              </td>
+            </tr>
+            <tr class="hover:bg-slate-900/40 transition bg-slate-950/40">
+              <td class="py-2.5 px-4 font-sans text-emerald-400 font-semibold">Gemini 2.5 Flash</td>
+              <td class="py-2.5 px-4 text-slate-200">5.86s</td>
+              <td class="py-2.5 px-4 text-slate-300">144.3 tok/s</td>
+              <td class="py-2.5 px-4 text-emerald-400 font-bold">96.9%</td>
+              <td class="py-2.5 px-4 text-emerald-400 font-bold">99.3%</td>
             </tr>
 
-            <!-- 3.5 Flash-Lite Level 2048 -->
-            <tr class="hover:bg-slate-900/40 transition">
-              <td class="py-3 px-4 font-sans font-semibold text-blue-400">Gemini 3.5 Flash-Lite</td>
-              <td class="py-3 px-4 font-sans"><span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-300 border border-blue-500/20">🔍 Deep Audit</span></td>
-              <td class="py-3 px-4 text-slate-300">2048</td>
-              <td class="py-3 px-4 text-slate-200">3.53s</td>
-              <td class="py-3 px-4 text-slate-300">588 tok</td>
-              <td class="py-3 px-4 text-blue-400">166.7 tok/s</td>
-              <td class="py-3 px-4 text-slate-300">89.2%</td>
-              <td class="py-3 px-4 text-slate-300">98.5%</td>
+            <!-- LEVEL 2048 (DEEP AUDIT) -->
+            <tr class="hover:bg-slate-900/40 transition border-t-2 border-slate-800">
+              <td rowspan="2" class="py-3 px-4 font-sans font-bold text-slate-200 border-r border-slate-800/80 align-middle">
+                🔍 Level 2<br><span class="text-[10px] font-normal text-slate-400">Budget: 2048</span>
+              </td>
+              <td class="py-2.5 px-4 font-sans text-blue-400 font-semibold">Gemini 3.5 Flash-Lite</td>
+              <td class="py-2.5 px-4 text-emerald-400 font-bold">3.53s</td>
+              <td class="py-2.5 px-4 text-blue-400 font-bold">166.7 tok/s</td>
+              <td class="py-2.5 px-4 text-slate-300">89.2%</td>
+              <td class="py-2.5 px-4 text-slate-300">98.5%</td>
+              <td rowspan="2" class="py-3 px-4 font-sans text-xs text-emerald-300 bg-emerald-950/20 border-l border-slate-800/80 align-middle">
+                🏆 <strong class="text-white">Gemini 2.5 Flash</strong>: <span class="text-emerald-400 font-semibold">+10.2% math accuracy</span> (99.4% vs 89.2%) & <span class="text-emerald-400 font-semibold">99.7% table fidelity</span> on complex footnotes.
+              </td>
             </tr>
-
-            <!-- 2.5 Flash Level 0 -->
-            <tr class="hover:bg-slate-900/40 transition bg-emerald-950/10">
-              <td class="py-3 px-4 font-sans font-semibold text-emerald-400">Gemini 2.5 Flash</td>
-              <td class="py-3 px-4 font-sans"><span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">⚡ Pure OCR (OFF)</span></td>
-              <td class="py-3 px-4 text-slate-300">0</td>
-              <td class="py-3 px-4 text-slate-200">4.10s</td>
-              <td class="py-3 px-4 text-slate-300">629 tok</td>
-              <td class="py-3 px-4 text-emerald-400 font-bold">153.6 tok/s</td>
-              <td class="py-3 px-4 text-slate-300">89.5%</td>
-              <td class="py-3 px-4 text-slate-300">98.8%</td>
-            </tr>
-
-            <!-- 2.5 Flash Level 512 -->
-            <tr class="hover:bg-slate-900/40 transition bg-emerald-950/10">
-              <td class="py-3 px-4 font-sans font-semibold text-emerald-400">Gemini 2.5 Flash</td>
-              <td class="py-3 px-4 font-sans"><span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">⚖️ Balanced</span></td>
-              <td class="py-3 px-4 text-slate-300">512</td>
-              <td class="py-3 px-4 text-slate-200">5.86s</td>
-              <td class="py-3 px-4 text-slate-300">846 tok</td>
-              <td class="py-3 px-4 text-emerald-400">144.3 tok/s</td>
-              <td class="py-3 px-4 text-emerald-400 font-bold">96.9%</td>
-              <td class="py-3 px-4 text-emerald-400 font-bold">99.3%</td>
-            </tr>
-
-            <!-- 2.5 Flash Level 2048 -->
-            <tr class="hover:bg-slate-900/40 transition bg-emerald-950/10">
-              <td class="py-3 px-4 font-sans font-semibold text-emerald-400">Gemini 2.5 Flash</td>
-              <td class="py-3 px-4 font-sans"><span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">🔍 Deep Forensic</span></td>
-              <td class="py-3 px-4 text-slate-300">2048</td>
-              <td class="py-3 px-4 text-amber-400">9.21s</td>
-              <td class="py-3 px-4 text-slate-300">1,124 tok</td>
-              <td class="py-3 px-4 text-slate-300">122.0 tok/s</td>
-              <td class="py-3 px-4 text-emerald-400 font-extrabold">99.4% 🏆</td>
-              <td class="py-3 px-4 text-emerald-400 font-extrabold">99.7% 🏆</td>
+            <tr class="hover:bg-slate-900/40 transition bg-slate-950/40">
+              <td class="py-2.5 px-4 font-sans text-emerald-400 font-semibold">Gemini 2.5 Flash</td>
+              <td class="py-2.5 px-4 text-amber-400">9.21s</td>
+              <td class="py-2.5 px-4 text-slate-300">122.0 tok/s</td>
+              <td class="py-2.5 px-4 text-emerald-400 font-extrabold">99.4% 🏆</td>
+              <td class="py-2.5 px-4 text-emerald-400 font-extrabold">99.7% 🏆</td>
             </tr>
 
           </tbody>
@@ -213,7 +207,7 @@
       </div>
       
       <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 text-[11px] text-slate-400 flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
-        <span>💡 <strong>Key Takeaway:</strong> Setting <code>thinking_budget = 0</code> unlocks maximum throughput on Flash-Lite for bulk OCR. Setting <code>thinking_budget = 2048</code> on 2.5 Flash reaches 99.4% accuracy for complex footnote reconciliation.</span>
+        <span>💡 <strong>Direct Advantage Summary:</strong> <strong>Gemini 3.5 Flash-Lite</strong> wins decisively on <strong>Speed & Throughput</strong> (1.6x–2.6x faster turnaround), while <strong>Gemini 2.5 Flash</strong> wins on <strong>Forensic Accuracy & Math Audit</strong> (+8.4% to +10.2% higher precision).</span>
       </div>
     </div>
 
