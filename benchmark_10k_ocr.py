@@ -94,7 +94,7 @@ def run_live_benchmark():
     client = None
     try:
         from google import genai
-        project = os.environ.get("GOOGLE_CLOUD_PROJECT", "warier-dev")
+        project = os.environ.get("GOOGLE_CLOUD_PROJECT") or os.environ.get("GCP_PROJECT")
         location = os.environ.get("GOOGLE_CLOUD_LOCATION", "us-central1")
         client = genai.Client(vertexai=True, project=project, location=location)
         print(f"[Info] Connected to Google GenAI SDK (Project: {project}, Region: {location})")
